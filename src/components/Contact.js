@@ -6,12 +6,12 @@ import TrackVisibility from 'react-on-screen';
 
 export const Contact = () => {
   const formInitialDetails = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    message: ''
-  }
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: "",
+  };
   const [formDetails, setFormDetails] = useState(formInitialDetails);
   const [buttonText, setButtonText] = useState('Send');
   const [status, setStatus] = useState({});
@@ -26,7 +26,7 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText("Sending...");
-    let response = await fetch("http://localhost:5000/contact", {
+    let response = await fetch("/api/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
